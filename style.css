@@ -38,8 +38,10 @@ body {
 }
 
 .brevis-logo {
-    height: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed - this targets your 'brevis.png' */
     margin-right: 8px;
+    /* Optional: If brevis.png has a dark background and you want to invert it visually */
+    /* filter: invert(100%); */
 }
 
 .logo-text {
@@ -135,7 +137,8 @@ body {
     right: -100px; /* Position off-screen slightly to the right */
     width: 600px; /* Adjust size of the graphic area */
     height: 600px; /* Adjust size */
-    background-image: url('https://via.placeholder.com/800x800/1a1a3a/6a1aed?text=Abstract+Graphic'); /* Placeholder. Replace with your actual image URL */
+    /* IMPORTANT: Replace this URL with your actual abstract background image URL */
+    background-image: url('https://via.placeholder.com/800x800/1a1a3a/6a1aed?text=Abstract+Graphic'); /* Placeholder */
     background-size: cover;
     background-position: center;
     opacity: 0.5; /* Make it subtle */
