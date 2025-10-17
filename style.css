@@ -1,0 +1,327 @@
+/* Basic Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d0d1e; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* For absolute positioning of leaderboard */
+    min-height: 100vh; /* Ensure container takes full height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header/Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 60px; /* Space below navbar */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.brevis-logo {
+    height: 30px; /* Adjust as needed */
+    margin-right: 8px;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #a0a0ff; /* A lighter blue/purple */
+}
+
+.nav-links a {
+    color: #c0c0c0;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align content to the top */
+    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden; /* Ensure graphic doesn't spill */
+}
+
+.hero-content {
+    max-width: 55%; /* Adjust width to make space for graphic */
+    z-index: 1; /* Keep content above background graphic */
+}
+
+.hero-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: #c0c0c0;
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #6a1aed; /* Purple */
+    color: #ffffff;
+    border: 2px solid #6a1aed;
+}
+
+.primary-btn:hover {
+    background-color: #5514c0;
+    border-color: #5514c0;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #a0a0ff; /* Lighter purple/blue */
+    border: 2px solid #a0a0ff;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(160, 160, 255, 0.1);
+    color: #ffffff;
+}
+
+.hero-graphic-bg {
+    position: absolute;
+    top: 0;
+    right: -100px; /* Position off-screen slightly to the right */
+    width: 600px; /* Adjust size of the graphic area */
+    height: 600px; /* Adjust size */
+    background-image: url('https://via.placeholder.com/800x800/1a1a3a/6a1aed?text=Abstract+Graphic'); /* Placeholder. Replace with your actual image URL */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Make it subtle */
+    z-index: 0; /* Behind content */
+}
+
+
+/* Categories Section */
+.categories-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px; /* Space from hero section */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 20px; /* Space between items */
+    margin-bottom: 80px;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1; /* Allows items to grow/shrink */
+    min-width: 120px; /* Minimum width before wrapping */
+}
+
+.category-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #1a1a3a; /* Darker circle background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* For emoji icons */
+    color: #a0a0ff;
+    border: 1px solid rgba(160, 160, 255, 0.3); /* Subtle border */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.category-item:hover .category-icon {
+    background-color: #2a2a5a;
+    border-color: #a0a0ff;
+}
+
+.category-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #c0c0c0;
+    text-align: center;
+}
+
+/* Leaderboard */
+.leaderboard {
+    position: absolute;
+    top: 220px; /* Adjust based on desired position */
+    right: 20px; /* Aligned to the right edge of the container */
+    background-color: #1a1a3a;
+    border-radius: 10px;
+    padding: 25px;
+    width: 250px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    z-index: 2; /* Ensure it's above other elements */
+    border: 1px solid rgba(160, 160, 255, 0.2);
+}
+
+.leaderboard h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #c0c0c0;
+    font-weight: 600;
+}
+
+.leaderboard-item:last-child {
+    margin-bottom: 0;
+}
+
+.leaderboard-item .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.leaderboard-item .percentage {
+    margin-left: auto; /* Push percentage to the right */
+    color: #ffffff;
+}
+
+/* Dot colors */
+.dot.purple { background-color: #6a1aed; }
+.dot.blue { background-color: #4a90e2; }
+.dot.pink { background-color: #e91e63; }
+
+
+/* Footer Text */
+.footer-text {
+    margin-top: auto; /* Pushes footer to the bottom */
+    padding: 30px 0;
+    text-align: left;
+    font-size: 14px;
+    color: #606060;
+}
+
+/* Basic Responsiveness - adjust as needed */
+@media (max-width: 900px) {
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-graphic-bg {
+        position: static; /* Remove absolute positioning on smaller screens */
+        width: 100%;
+        height: 300px;
+        opacity: 0.3;
+        margin-top: 30px;
+    }
+
+    .leaderboard {
+        position: static; /* Place it in the normal flow */
+        margin: 50px auto; /* Center it below hero on smaller screens */
+        max-width: 300px;
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .nav-links a {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 48px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 38px !important;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn {
+        width: 100%;
+    }
+    .categories-section {
+        justify-content: center;
+    }
+    .category-item {
+        flex: none; /* Do not let them grow */
+        width: 45%; /* Two items per row */
+    }
+    .navbar {
+        margin-bottom: 30px;
+    }
+}
